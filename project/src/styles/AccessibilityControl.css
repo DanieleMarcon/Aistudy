@@ -1,0 +1,30 @@
+.accessibility-control {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.accessibility-control-header {
+  margin-bottom: 1.25rem;
+}
+
+.accessibility-control-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #2b2d42;
+}
+
+.accessibility-control-description {
+  margin: 0;
+  color: #5c667a;
+  font-size: 0.95rem;
+}
+
+.accessibility-control-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

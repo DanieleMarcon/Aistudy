@@ -1,0 +1,26 @@
+.feature-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.feature-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid #4A7AFF;
+}
+
+.feature-card:hover {
+  border-color: #AF52DE;
+}
+
+.feature-card .card-title {
+  font-size: 1.2rem;
+}
+
+.feature-description {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #5c667a;
+}
