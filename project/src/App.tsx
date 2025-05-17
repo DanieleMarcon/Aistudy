@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,7 +10,6 @@ import TextPage from './pages/TextPage';
 import MindMapPage from './pages/MindMapPage';
 import MirrorPage from './pages/MirrorPage';
 import AccessibilityPage from './pages/AccessibilityPage';
-import ResourcesPage from './pages/ResourcesPage';
 import { ThemeProvider } from './context/ThemeContext';
 import './styles/App.css';
 
@@ -30,7 +29,6 @@ function App() {
               <Route path="/mappe" element={<MindMapPage />} />
               <Route path="/specchio" element={<MirrorPage />} />
               <Route path="/accessibilita" element={<AccessibilityPage />} />
-              <Route path="/risorse" element={<ResourcesPage />} />
             </Routes>
           </main>
           <Footer />

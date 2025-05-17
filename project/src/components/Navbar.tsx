@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Home, Brain, BookText, Lightbulb, Map, Mic, Settings, Upload } from 'lucide-react';
+import { BookOpen, Home, Brain, BookText, Lightbulb, Map, Mic, Settings } from 'lucide-react';
 import DarkModeToggle from './DarkModeToggle';
 import '../styles/Navbar.css';
 
@@ -60,10 +60,6 @@ const Navbar: React.FC = () => {
           <Link to="/specchio" className={`nav-link ${isActive('/specchio') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
             <Mic size={20} />
             <span>Specchio</span>
-          </Link>
-          <Link to="/risorse" className={`nav-link ${isActive('/risorse') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
-            <Upload size={20} />
-            <span>Risorse</span>
           </Link>
           <Link to="/accessibilita" className={`nav-link ${isActive('/accessibilita') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
             <Settings size={20} />
