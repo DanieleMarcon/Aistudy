@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, BookText, Lightbulb, Map, Mic, Settings } from 'lucide-react';
+import { BookOpen, BookText, Lightbulb, Map, Mic, Settings, Upload } from 'lucide-react';
 import Card from '../components/Card';
 import ProgressBar from '../components/ProgressBar';
 import Badge from '../components/Badge';
@@ -87,6 +87,13 @@ const HomePage: React.FC = () => {
             description="Pratica orale e ottieni feedback motivanti" 
             icon={<Mic size={32} />}
             to="/specchio"
+          />
+          
+          <Card 
+            title="Risorse" 
+            description="Carica e organizza le tue fonti di studio" 
+            icon={<Upload size={32} />}
+            to="/risorse"
           />
           
           <Card 
