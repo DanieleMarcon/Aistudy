@@ -1,29 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Studiamo from './pages/Studiamo';
-import Chiedi from './pages/Chiedi';
-import Vocabolario from './pages/Vocabolario';
-import Testo from './pages/Testo';
-import Mappe from './pages/Mappe';
-import Specchio from './pages/Specchio';
-import Accessibilita from './pages/Accessibilita';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import StudyPage from './pages/StudyPage';
+import AskPage from './pages/AskPage';
+import VocabularyPage from './pages/VocabularyPage';
+import TextPage from './pages/TextPage';
+import MindMapPage from './pages/MindMapPage';
+import MirrorPage from './pages/MirrorPage';
+import AccessibilityPage from './pages/AccessibilityPage';
+import { ThemeProvider } from './context/ThemeContext';
+import './styles/App.css';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/studiamo" element={<Studiamo />} />
-        <Route path="/chiedi" element={<Chiedi />} />
-        <Route path="/vocabolario" element={<Vocabolario />} />
-        <Route path="/testo" element={<Testo />} />
-        <Route path="/mappe" element={<Mappe />} />
-        <Route path="/specchio" element={<Specchio />} />
-        <Route path="/accessibilita" element={<Accessibilita />} />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="app-container">
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/studiamo" element={<StudyPage />} />
+              <Route path="/chiedi" element={<AskPage />} />
+              <Route path="/vocabolario" element={<VocabularyPage />} />
+              <Route path="/testo" element={<TextPage />} />
+              <Route path="/mappe" element={<MindMapPage />} />
+              <Route path="/specchio" element={<MirrorPage />} />
+              <Route path="/accessibilita" element={<AccessibilityPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
-};
+}
 
 export default App;

@@ -1,114 +1,72 @@
-# AIstudy App
+# AIstudy - App Educativa Accessibile
 
-AIstudy è un'applicazione web progettata per migliorare il metodo di studio degli studenti, con particolare attenzione all'accessibilità e agli strumenti didattici interattivi.
+AIstudy è un'applicazione educativa progettata per studenti con e senza disabilità, con l'obiettivo di migliorare l'autonomia nello studio attraverso strumenti digitali accessibili, personalizzabili e motivanti.
 
-## Panoramica del Progetto
+## Finalità Pedagogica
 
-Questa applicazione è stata sviluppata per supportare studenti con e senza disabilità, offrendo un'interfaccia accessibile e strumenti che si adattano a diversi stili di apprendimento.
+L'app è stata sviluppata seguendo i principi del Universal Design for Learning (UDL), offrendo:
 
-### Caratteristiche Principali
+- Molteplici mezzi di rappresentazione delle informazioni
+- Diverse modalità di azione ed espressione
+- Vari approcci per stimolare l'interesse e la motivazione
+- Accessibilità per studenti con diverse esigenze e abilità
 
-- Navigazione semplice e accessibile
-- Layout responsive che si adatta a tutti i dispositivi
-- Strumenti di studio interattivi e simulati
-- Funzionalità di accessibilità personalizzabili
-- Interfaccia intuitiva con feedback visivi
+## Caratteristiche Principali
 
-## Struttura del Progetto
+- Design responsivo con modalità chiara/scura
+- Interfaccia "gamificata" con elementi motivazionali
+- Strumenti studiati per promuovere l'autonomia nell'apprendimento
+- Sezioni interattive per diverse modalità di studio
+- Personalizzazione dell'esperienza utente
 
-```
-aistudy-app/
-├── public/
-│   └── vite.svg
-├── src/
-│   ├── components/
-│   │   ├── AccessibilityControl.tsx
-│   │   ├── Button.tsx
-│   │   ├── Card.tsx
-│   │   ├── FeatureCard.tsx
-│   │   ├── Layout.tsx
-│   │   ├── Navbar.tsx
-│   │   ├── Slider.tsx
-│   │   └── Toggle.tsx
-│   ├── pages/
-│   │   ├── Accessibilita.tsx
-│   │   ├── Chiedi.tsx
-│   │   ├── Home.tsx
-│   │   ├── Mappe.tsx
-│   │   ├── Specchio.tsx
-│   │   ├── Studiamo.tsx
-│   │   ├── Testo.tsx
-│   │   └── Vocabolario.tsx
-│   ├── styles/
-│   │   ├── Accessibilita.css
-│   │   ├── AccessibilityControl.css
-│   │   ├── Button.css
-│   │   ├── Card.css
-│   │   ├── Chiedi.css
-│   │   ├── FeatureCard.css
-│   │   ├── Home.css
-│   │   ├── Layout.css
-│   │   ├── Mappe.css
-│   │   ├── Navbar.css
-│   │   ├── Slider.css
-│   │   ├── Specchio.css
-│   │   ├── Studiamo.css
-│   │   ├── Testo.css
-│   │   ├── Toggle.css
-│   │   ├── Vocabolario.css
-│   │   └── index.css
-│   ├── App.tsx
-│   ├── index.css
-│   ├── main.tsx
-│   └── vite-env.d.ts
-├── index.html
-├── package.json
-├── postcss.config.js
-├── tailwind.config.js
-├── tsconfig.app.json
-├── tsconfig.json
-├── tsconfig.node.json
-├── vite.config.ts
-└── README.md
-```
+## Struttura dell'Applicazione
 
-## Pagine e Funzionalità
+### Componenti
 
-### Home
-La pagina iniziale presenta l'applicazione e fornisce collegamenti a tutte le sezioni principali.
+- `Navbar`: Navigazione principale con link a tutte le sezioni
+- `DarkModeToggle`: Selettore per modalità chiara/scura
+- `Card`: Componente riutilizzabile per le diverse funzionalità
+- `ProgressBar`: Visualizzazione dei progressi
+- `Badge`: Elemento grafico per riconoscimenti e categorie
+- `Footer`: Informazioni di contatto e navigazione secondaria
 
-### Studiamo
-Un percorso guidato di studio con planner, agenda e gestione dei file. Include suggerimenti per migliorare il metodo di studio.
+### Pagine
 
-### Chiedi
-Una sezione per porre domande e ricevere risposte simulate, con suggerimenti per approfondimenti e risorse correlate.
-
-### Vocabolario
-Un glossario interattivo che permette di aggiungere, modificare ed esplorare definizioni organizzate per categorie.
-
-### Testo
-Una guida alla composizione di testi con diverse strategie di scrittura e feedback simulato.
-
-### Mappe
-Uno strumento per creare e visualizzare mappe mentali con nodi interattivi.
-
-### Specchio
-Un'area per simulare presentazioni orali e ricevere feedback automatico sulla performance.
-
-### Accessibilità
-Impostazioni personalizzabili per adattare l'interfaccia alle esigenze dell'utente, inclusi controlli per tema, dimensione del testo e altro.
-
-## Istruzioni per la Navigazione
-
-1. Dalla Home, seleziona una delle sezioni cliccando sulla rispettiva card
-2. Utilizza la barra di navigazione in alto per spostarti tra le diverse sezioni
-3. Personalizza l'esperienza visitando la sezione Accessibilità
-4. In ciascuna sezione, interagisci con i controlli per simulare le diverse funzionalità
+1. **Home**: Panoramica delle funzionalità con statistiche e accesso rapido
+2. **Studiamo**: Pianificazione dello studio con gestione dei compiti
+3. **Chiedi**: Simulazione di ricerca e domande frequenti
+4. **Vocabolario**: Glossario personalizzabile di termini e definizioni
+5. **Testo**: Strumento guidato per la composizione di testi usando il metodo 5W
+6. **Mappe**: Visualizzazione di concetti con mappe mentali interattive
+7. **Specchio**: Simulazione di pratica orale con feedback motivazionale
+8. **Accessibilità**: Impostazioni per personalizzare l'interfaccia utente
 
 ## Tecnologie Utilizzate
 
-- React 18
-- TypeScript
-- React Router
-- Tailwind CSS (solo per utility, senza componenti UI)
+- React con TypeScript
+- React Router per la navigazione
 - Lucide React per le icone
+- CSS personalizzato per l'interfaccia utente
+- Tema chiaro/scuro con gestione degli stati
+
+## Come Navigare l'Applicazione
+
+1. Utilizzare la barra di navigazione superiore per spostarsi tra le diverse sezioni
+2. Il pulsante per il tema chiaro/scuro si trova nella barra di navigazione
+3. Nella home page sono disponibili card cliccabili per accedere rapidamente alle varie funzionalità
+4. Ogni pagina ha controlli interattivi specifici per la relativa funzionalità
+
+## Accessibilità
+
+L'applicazione è stata progettata con particolare attenzione all'accessibilità:
+
+- Contrasto adeguato tra testi e sfondi
+- Supporto per font ad alta leggibilità
+- Modalità ad alto contrasto
+- Possibilità di regolare la dimensione del testo
+- Elementi di interfaccia grandi e facilmente cliccabili
+- Compatibilità con tecnologie assistive
+
+---
+
+AIstudy rappresenta un prototipo educativo che dimostra come la tecnologia possa supportare l'apprendimento inclusivo, rendendo lo studio più accessibile, interattivo e motivante per tutti gli studenti.

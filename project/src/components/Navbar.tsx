@@ -1,113 +1,73 @@
 import React, { useState } from 'react';
-import { Menu, X, BookOpen, HelpCircle, BookText, FileText, Network, Mic, Settings } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { BookOpen, Home, Brain, BookText, Lightbulb, Map, Mic, Settings } from 'lucide-react';
+import DarkModeToggle from './DarkModeToggle';
 import '../styles/Navbar.css';
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
-  const isActive = (path: string) => {
+  const isActive = (path: string): boolean => {
     return location.pathname === path;
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="logo" onClick={closeMenu}>
+        <Link to="/" className="logo">
           <BookOpen className="logo-icon" />
-          <span>AIstudy</span>
+          <span className="logo-text">AIstudy</span>
         </Link>
 
-        <button 
-          className="menu-toggle" 
-          onClick={toggleMenu}
-          aria-expanded={isOpen}
-          aria-label="Toggle navigation menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+          <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </button>
 
-        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          <li>
-            <Link 
-              to="/studiamo" 
-              className={`nav-link ${isActive('/studiamo') ? 'active' : ''}`} 
-              onClick={closeMenu}
-            >
-              <BookOpen size={20} />
-              <span>Studiamo</span>
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/chiedi" 
-              className={`nav-link ${isActive('/chiedi') ? 'active' : ''}`} 
-              onClick={closeMenu}
-            >
-              <HelpCircle size={20} />
-              <span>Chiedi</span>
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/vocabolario" 
-              className={`nav-link ${isActive('/vocabolario') ? 'active' : ''}`} 
-              onClick={closeMenu}
-            >
-              <BookText size={20} />
-              <span>Vocabolario</span>
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/testo" 
-              className={`nav-link ${isActive('/testo') ? 'active' : ''}`} 
-              onClick={closeMenu}
-            >
-              <FileText size={20} />
-              <span>Testo</span>
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/mappe" 
-              className={`nav-link ${isActive('/mappe') ? 'active' : ''}`} 
-              onClick={closeMenu}
-            >
-              <Network size={20} />
-              <span>Mappe</span>
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/specchio" 
-              className={`nav-link ${isActive('/specchio') ? 'active' : ''}`} 
-              onClick={closeMenu}
-            >
-              <Mic size={20} />
-              <span>Specchio</span>
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/accessibilita" 
-              className={`nav-link ${isActive('/accessibilita') ? 'active' : ''}`} 
-              onClick={closeMenu}
-            >
-              <Settings size={20} />
-              <span>Accessibilità</span>
-            </Link>
-          </li>
-        </ul>
+        <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+          <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+            <Home size={20} />
+            <span>Home</span>
+          </Link>
+          <Link to="/studiamo" className={`nav-link ${isActive('/studiamo') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+            <BookText size={20} />
+            <span>Studiamo</span>
+          </Link>
+          <Link to="/chiedi" className={`nav-link ${isActive('/chiedi') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+            <Lightbulb size={20} />
+            <span>Chiedi</span>
+          </Link>
+          <Link to="/vocabolario" className={`nav-link ${isActive('/vocabolario') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+            <BookOpen size={20} />
+            <span>Vocabolario</span>
+          </Link>
+          <Link to="/testo" className={`nav-link ${isActive('/testo') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+            <BookText size={20} />
+            <span>Testo</span>
+          </Link>
+          <Link to="/mappe" className={`nav-link ${isActive('/mappe') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+            <Map size={20} />
+            <span>Mappe</span>
+          </Link>
+          <Link to="/specchio" className={`nav-link ${isActive('/specchio') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+            <Mic size={20} />
+            <span>Specchio</span>
+          </Link>
+          <Link to="/accessibilita" className={`nav-link ${isActive('/accessibilita') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+            <Settings size={20} />
+            <span>Accessibilità</span>
+          </Link>
+        </div>
+
+        <DarkModeToggle />
       </div>
     </nav>
   );
